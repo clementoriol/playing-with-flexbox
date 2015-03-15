@@ -22,7 +22,8 @@ var gulp          = require('gulp'),
     browserSync   = require('browser-sync'),
     reload        = browserSync.reload,
     sass          = require('gulp-sass'),
-    autoprefixer  = require('gulp-autoprefixer');
+    autoprefixer  = require('gulp-autoprefixer'),
+    concat        = require('gulp-concat');
 
 /* -- Constants & Paths -----------------------------  */
 
@@ -33,7 +34,9 @@ var paths = {
   views_dest: 'dist/',
   css_src: 'src/styles/main.scss',
   css_watch: 'src/styles/**/*.scss',
-  css_dest: 'dist/styles/'
+  css_dest: 'dist/styles/',
+  scripts_src: 'src/scripts/**/*.js',
+  scripts_dest: 'dist/scripts/'
 }
 
 /* =====================================================
@@ -77,6 +80,14 @@ gulp.task('sass', function(){
     .pipe(gulp.dest(paths.css_dest));
 });
 
+/* -- Scripts Tasks --------------------------------  */
+gulp.task('scripts', function(){
+  return gulp
+    .src(paths.scripts_src)
+    .pipe(concat('scripts.js'))
+    .pipe(gulp.dest(paths.scripts_dest));
+});
+
 /* -- Watch Task -----------------------------------  */
 gulp.task('watch', function(taskEnd) {
   // Watch jade files
@@ -86,6 +97,10 @@ gulp.task('watch', function(taskEnd) {
   // Watch SCSS files
   gulp
     .watch(paths.css_watch, ['build', 'bs-reload']);
+
+  // Watch js files
+  gulp
+    .watch(paths.scripts_src, ['build', 'bs-reload']);
 
   taskEnd();
 });
@@ -110,6 +125,7 @@ gulp.task('build', function(taskEnd){
   runSequence(
     'clean',
     'sass',
+    'scripts',
     'jade',
     taskEnd
   );
