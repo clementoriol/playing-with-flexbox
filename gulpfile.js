@@ -23,7 +23,8 @@ var gulp          = require('gulp'),
     reload        = browserSync.reload,
     sass          = require('gulp-sass'),
     autoprefixer  = require('gulp-autoprefixer'),
-    concat        = require('gulp-concat');
+    concat        = require('gulp-concat'),
+    imagemin      = require('gulp-imagemin');
 
 /* -- Constants & Paths -----------------------------  */
 
@@ -36,7 +37,9 @@ var paths = {
   css_watch: 'src/styles/**/*.scss',
   css_dest: 'dist/styles/',
   scripts_src: 'src/scripts/**/*.js',
-  scripts_dest: 'dist/scripts/'
+  scripts_dest: 'dist/scripts/',
+  images_src: 'src/images/**',
+  images_dest: 'dist/images/'
 }
 
 /* =====================================================
@@ -88,6 +91,15 @@ gulp.task('scripts', function(){
     .pipe(gulp.dest(paths.scripts_dest));
 });
 
+gulp.task('images', function(){
+  return gulp
+    .src(paths.images_src)
+    .pipe(imagemin({
+      progressive: true
+    }))
+    .pipe(gulp.dest(paths.images_dest));
+});
+
 /* -- Watch Task -----------------------------------  */
 gulp.task('watch', function(taskEnd) {
   // Watch jade files
@@ -101,6 +113,10 @@ gulp.task('watch', function(taskEnd) {
   // Watch js files
   gulp
     .watch(paths.scripts_src, ['build', 'bs-reload']);
+
+  // Watch images
+  gulp
+    .watch(paths.images_src, ['build', 'bs-reload']);
 
   taskEnd();
 });
@@ -126,6 +142,7 @@ gulp.task('build', function(taskEnd){
     'clean',
     'sass',
     'scripts',
+    'images',
     'jade',
     taskEnd
   );
