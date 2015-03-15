@@ -20,7 +20,9 @@ var gulp          = require('gulp'),
     del           = require('del'),
     runSequence   = require('run-sequence'),
     browserSync   = require('browser-sync'),
-    reload        = browserSync.reload;
+    reload        = browserSync.reload,
+    sass          = require('gulp-sass'),
+    autoprefixer  = require('gulp-autoprefixer');
 
 /* -- Constants & Paths -----------------------------  */
 
@@ -28,7 +30,10 @@ var gulp          = require('gulp'),
 var paths = {
   dist: 'dist',
   views_src: 'src/views/**/*.jade',
-  views_dest: 'dist/'
+  views_dest: 'dist/',
+  css_src: 'src/styles/main.scss',
+  css_watch: 'src/styles/**/*.scss',
+  css_dest: 'dist/styles/'
 }
 
 /* =====================================================
@@ -54,7 +59,7 @@ gulp.task('clean', function(){
 });
 
 /* -- Jade Task -------------------------------------  */
-gulp.task('build-jade', function(){
+gulp.task('jade', function(){
   return gulp
     .src(paths.views_src)
     .pipe(jade({
@@ -63,11 +68,24 @@ gulp.task('build-jade', function(){
     .pipe(gulp.dest(paths.views_dest));
 });
 
+/* -- SCSS / CSS related Tasks --------------------  */
+gulp.task('sass', function(){
+  return gulp
+    .src(paths.css_src)
+    .pipe(sass({errLogToConsole: true}))
+    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+    .pipe(gulp.dest(paths.css_dest));
+});
+
 /* -- Watch Task -----------------------------------  */
 gulp.task('watch', function(taskEnd) {
-  // Watch index file
+  // Watch jade files
   gulp
     .watch(paths.views_src, ['build', 'bs-reload']);
+
+  // Watch SCSS files
+  gulp
+    .watch(paths.css_watch, ['build', 'bs-reload']);
 
   taskEnd();
 });
@@ -91,7 +109,8 @@ gulp.task('server', function(taskEnd){
 gulp.task('build', function(taskEnd){
   runSequence(
     'clean',
-    'build-jade',
+    'sass',
+    'jade',
     taskEnd
   );
 });
