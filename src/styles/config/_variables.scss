@@ -1,0 +1,38 @@
+/*//////////////////////////////////////////////////////
+
+  CONFIG / Variables
+
+///////////////////////////////////////////////////// */
+
+/* =====================================================
+    Color variables
+=====================================================  */
+/* -- Main Color ----- */
+$color-main: #6090FF;
+$color-main-light: lighten($color-main, 10%);
+$color-main-lighter: lighten($color-main, 20%);
+$color-main-lightest: lighten($color-main, 30%);
+$color-main-dark: darken($color-main, 10%);
+$color-main-darker: darken($color-main, 20%);
+$color-main-darkest: darken($color-main, 30%);
+
+/* -- Alt Color ----- */
+$color-alt: #F16529;
+$color-alt-light: lighten($color-alt, 10%);
+$color-alt-lighter: lighten($color-alt, 20%);
+$color-alt-lightest: lighten($color-alt, 30%);
+$color-alt-dark: darken($color-alt, 10%);
+$color-alt-darker: darken($color-alt, 20%);
+$color-alt-darkest: darken($color-alt, 30%);
+
+/* -- Text color ----- */
+$color-text: #000000;
+
+/* -- Link color ----- */
+$color-link: $color-main;
+
+/* =====================================================
+    Font variables
+=====================================================  */
+$font-main: "Helvetica Neue",Helvetica,Arial,sans-serif;
+$font-alt: Georgia,Times,"Times New Roman",serif;
