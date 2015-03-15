@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/clementoriol/gulp-static-site-starter",
   "devDependencies": {
-    "gulp": "^3.8.11"
+    "gulp": "^3.8.11",
+    "gulp-jade": "^1.0.0"
   }
 }
