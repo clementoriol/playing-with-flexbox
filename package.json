@@ -1,0 +1,22 @@
+{
+  "name": "gulp-static-site-starter",
+  "version": "1.0.0",
+  "description": "A simple Starter for bootstrapping static sites, using gulp for assets management ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://clementoriol@github.com/clementoriol/gulp-static-site-starter"
+  },
+  "author": "Clément Oriol",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/clementoriol/gulp-static-site-starter/issues"
+  },
+  "homepage": "https://github.com/clementoriol/gulp-static-site-starter",
+  "devDependencies": {
+    "gulp": "^3.8.11"
+  }
+}
