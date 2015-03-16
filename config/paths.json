@@ -1,0 +1,14 @@
+{
+  "dist": "dist",
+  "views_src": "src/views/pages/**/*.jade",
+  "views_watch": "src/views/**/*.jade",
+  "views_dest": "dist/",
+  "css_src": "src/styles/main.scss",
+  "css_watch": "src/styles/**/*.scss",
+  "css_dest": "dist/styles/",
+  "scripts_src": "src/scripts/**/*.js",
+  "scripts_dest": "dist/scripts/",
+  "images_src": "src/images/**",
+  "images_dest": "dist/images/",
+  "vendor_src": "bower_components/"
+}

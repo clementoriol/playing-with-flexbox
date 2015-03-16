@@ -29,19 +29,10 @@ var gulp          = require('gulp'),
 /* -- Constants & Paths -----------------------------  */
 
 // Paths
-var paths = {
-  dist: 'dist',
-  views_src: 'src/views/pages/**/*.jade',
-  views_watch: 'src/views/**/*.jade',
-  views_dest: 'dist/',
-  css_src: 'src/styles/main.scss',
-  css_watch: 'src/styles/**/*.scss',
-  css_dest: 'dist/styles/',
-  scripts_src: 'src/scripts/**/*.js',
-  scripts_dest: 'dist/scripts/',
-  images_src: 'src/images/**',
-  images_dest: 'dist/images/'
-}
+var paths = require('./config/paths.json');
+
+// Vendor files
+var vendor = require('./config/vendor-files.js');
 
 /* =====================================================
     Single Tasks
@@ -84,6 +75,13 @@ gulp.task('sass', function(){
     .pipe(gulp.dest(paths.css_dest));
 });
 
+gulp.task('vendor-styles', function(){
+  return gulp
+    .src(vendor.styles)
+    .pipe(concat('vendor.css'))
+    .pipe(gulp.dest(paths.css_dest));
+});
+
 /* -- Scripts Tasks --------------------------------  */
 gulp.task('scripts', function(){
   return gulp
@@ -111,6 +109,7 @@ gulp.task('watch', function(taskEnd) {
   gulp
     .watch(paths.css_watch, ['build', 'bs-reload']);
 
+
   // Watch js files
   gulp
     .watch(paths.scripts_src, ['build', 'bs-reload']);
@@ -118,6 +117,10 @@ gulp.task('watch', function(taskEnd) {
   // Watch images
   gulp
     .watch(paths.images_src, ['build', 'bs-reload']);
+
+  // Watch vendor files
+  gulp
+    .watch(paths.vendor_src, ['build', 'bs-reload']);
 
   taskEnd();
 });
@@ -142,6 +145,7 @@ gulp.task('build', function(taskEnd){
   runSequence(
     'clean',
     'sass',
+    'vendor-styles',
     'scripts',
     'images',
     'jade',
