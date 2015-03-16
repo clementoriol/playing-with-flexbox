@@ -31,7 +31,8 @@ var gulp          = require('gulp'),
 // Paths
 var paths = {
   dist: 'dist',
-  views_src: 'src/views/**/*.jade',
+  views_src: 'src/views/pages/**/*.jade',
+  views_watch: 'src/views/**/*.jade',
   views_dest: 'dist/',
   css_src: 'src/styles/main.scss',
   css_watch: 'src/styles/**/*.scss',
