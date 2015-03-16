@@ -1,0 +1,13 @@
+{
+  "name": "gulp-static-site-starter",
+  "version": "0.0.0",
+  "homepage": "https://github.com/clementoriol/gulp-static-site-starter",
+  "authors": [
+    "Clement Oriol <clement@clementoriol.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "normalize": "~1.0.4"
+  }
+}
