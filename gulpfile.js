@@ -103,7 +103,7 @@ gulp.task('images', function(){
 gulp.task('watch', function(taskEnd) {
   // Watch jade files
   gulp
-    .watch(paths.views_src, ['build', 'bs-reload']);
+    .watch(paths.views_watch, ['build', 'bs-reload']);
 
   // Watch SCSS files
   gulp
