@@ -1,6 +1,6 @@
 /*//////////////////////////////////////////////////////
 
-  My Project
+  Playing With Flexbox
   SCSS File
 
 ///////////////////////////////////////////////////// */
@@ -12,14 +12,61 @@
 @import 'config/base';
 
 /* =====================================================
-    Components
+    Flexbox Stuff
 =====================================================  */
-@import 'components/links';
-@import 'components/buttons';
+// Wraper
+.wrapper{
+  display: flex;
+  width:100%;
+}
 
-/* =====================================================
-    Layout
-=====================================================  */
-@import 'layout/header';
-@import 'layout/footer';
-@import 'layout/main-container';
+// Block Colors
+.block-color{
+  &.block-1{
+    background-color: $color-1;
+  }
+
+  &.block-2{
+    background-color: $color-2;
+  }
+
+  &.block-3{
+    background-color: $color-3;
+  }
+
+  &.block-4{
+    background-color: $color-4;
+  }
+
+  &.block-5{
+    background-color: $color-5;
+  }
+
+  &.block-6{
+    background-color: $color-6;
+  }
+
+  &.block-7{
+    background-color: $color-7;
+  }
+
+  &.block-8{
+    background-color: $color-8;
+  }
+
+  &.block-9{
+    background-color: $color-9;
+  }
+
+  &.block-10{
+    background-color: $color-10;
+  }
+}
+
+// Block Setup
+.block-color{
+  color: white;
+  text-align:center;
+  font-size:100px;
+  flex:1;
+}

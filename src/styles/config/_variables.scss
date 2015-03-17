@@ -8,31 +8,22 @@
     Color variables
 =====================================================  */
 /* -- Main Color ----- */
-$color-main: #6090FF;
-$color-main-light: lighten($color-main, 10%);
-$color-main-lighter: lighten($color-main, 20%);
-$color-main-lightest: lighten($color-main, 30%);
-$color-main-dark: darken($color-main, 10%);
-$color-main-darker: darken($color-main, 20%);
-$color-main-darkest: darken($color-main, 30%);
-
-/* -- Alt Color ----- */
-$color-alt: #F16529;
-$color-alt-light: lighten($color-alt, 10%);
-$color-alt-lighter: lighten($color-alt, 20%);
-$color-alt-lightest: lighten($color-alt, 30%);
-$color-alt-dark: darken($color-alt, 10%);
-$color-alt-darker: darken($color-alt, 20%);
-$color-alt-darkest: darken($color-alt, 30%);
+$color-1  : #264653;
+$color-2  : lighten($color-1, 10%);
+$color-3  : #2A9D8F;
+$color-4  : lighten($color-3, 10%);
+$color-5  : #E9C46A;
+$color-6  : lighten($color-5, 10%);
+$color-7  : #F4A261;
+$color-8  : lighten($color-7, 10%);
+$color-9  : #E76F51;
+$color-10 : lighten($color-9, 10%);
 
 /* -- Text color ----- */
 $color-text: #000000;
 
-/* -- Link color ----- */
-$color-link: $color-main;
-
 /* =====================================================
     Font variables
 =====================================================  */
-$font-main: "Helvetica Neue",Helvetica,Arial,sans-serif;
-$font-alt: Georgia,Times,"Times New Roman",serif;
+$font-main: Georgia,Times,"Times New Roman",serif;
+$font-alt: "Helvetica Neue",Helvetica,Arial,sans-serif;
