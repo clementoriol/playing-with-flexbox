@@ -25,17 +25,22 @@ Your brower should open the page to http://localhost:3000/
 
 ## The Playground
 We'll mostly fiddle around with two files :
-- `src/styles/main.scss` where we'll write all of our CSS (in SASS)
-- `src/views/pages/index.jade` where we'll write our HTML (in jade)
+- `src/styles/flexbox/step01.scss` where we'll write the CSS for the first example (in SCSS)
+- - `src/styles/flexbox/step02.scss` for the second example
+
+The HTML for the examples is visible here :
+- `src/views/pages/index.jade` Example 1
+- `src/views/pages/menu.jade` Example 2
 
 
 ## Let's play !
 
-### Exemple 1: index.jade (http://localhost:3000/)
-A small full-screen exemple to grab the basics
+### Example 1: index.jade [http://localhost:3000/](http://localhost:3000/)
+*A small full-screen exemple to grab the basics*
 
 #### The Basics
 (already setup for your convenience !)
+
 To use flexbox, we'll need two things :
 
   - A Container. In our case, a `div` with the class of `wrapper`
@@ -92,7 +97,7 @@ try to follow two contradictory rules :
 Switch the `flex-grow` property to `0` will enable it to be precisely 300px.
 
 
-### Exemple 2: menu.jade (http://localhost:3000/menu.html)
+### Exemple 2: menu.jade [http://localhost:3000/menu.html](http://localhost:3000/menu.html)
 A simple nav bar demo to understand alignements
 
 #### Adding flexbox to the example
@@ -110,32 +115,31 @@ Let's play with the `align-items` property.
 Adding `align-items:center` **to the container** (`.flex-nav`) will achieve just that.
 
 Other possible values for the `align-items` are :
-```
-flex-start: align at the start of the flex flow
-flex-end: align at the end of the flex flow
-center: centered
-baseline: aligned to other elements `line-height`
-stretch (default): stretch to fill the container (still respect min-width/max-width)
-```
+
+- `flex-start`: align at the start of the flex flow
+- `flex-end`: align at the end of the flex flow
+- `center`: centered
+- `baseline`: aligned to other elements `line-height`
+- `stretch` (default): stretch to fill the container (still respect min-width/max-width)
+
 
 #### Positionning the navigation to the right of the screen
 Not bad ! Now, we'd like to move the nav bar to the right.
 Adding the `justify-content` property **to the container** allows that.
 
 let's check the possible values of the property :
-```
-flex-start: aligning elements at the start of the container
-flex-end: aligning elements at the end of the container
-center: aligning elements at the center of the container
-space-between: Distribute the elements evenly, with space between them.
-space-around: Distribute the elements evenly, with space around them.
-stretch: Default value
-```
+
+- `flex-start`: aligning elements at the start of the container
+- `flex-end`: aligning elements at the end of the container
+- `center`: aligning elements at the center of the container
+- `space-between`: Distribute the elements evenly, with space between them.
+- `space-around`: Distribute the elements evenly, with space around them.
+- `stretch`: Default value
 
 ### That's it for now :)
 A more detailing doc covering the extra properties here :
 
-https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+[https://css-tricks.com/snippets/css/a-guide-to-flexbox/](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
 
 
