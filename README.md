@@ -14,7 +14,7 @@ First, clone the repo. Then :
   bower install
   ```
 
-# Launch the Server
+## Launch the Server
 Let's Launch the server using :
 
 ```
