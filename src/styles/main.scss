@@ -14,14 +14,8 @@
 /* =====================================================
     Flexbox Stuff
 =====================================================  */
-// Wraper
-.wrapper{
-  display: flex;
-  width:100%;
-}
-
 // Block Colors
-.block-color{
+.block{
   &.block-1{
     background-color: $color-1;
   }
@@ -63,8 +57,15 @@
   }
 }
 
+// Wraper
+.wrapper{
+  display: flex;
+  flex-direction:row;
+}
+
+
 // Block Setup
-.block-color{
+.block{
   color: white;
   text-align:center;
   font-size:100px;
