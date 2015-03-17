@@ -7,8 +7,39 @@
 /* =====================================================
    SETUP
 =====================================================  */
+.nav-logo{
+  width:75px;
+  height:75px;
+  background-color: $color-3;
+  border-radius:50%;
+  line-height: 75px;
+  text-align: center;
+}
 
+.nav-links{
+  padding:0 10px;
+}
+
+.nav-links a{
+  color:white;
+  text-decoration: none;
+  display: inline-block;
+  margin:0 10px;
+  background-color:$color-2;
+  padding:10px;
+  border-radius:5px;
+
+  &:hover{
+    background-color:$color-4;
+  }
+}
 
 /* =====================================================
    Let's Play !
 =====================================================  */
+.flex-nav{
+  padding:10px;
+  width:100%;
+  height:100px;
+  background-color: $color-1;
+}
